@@ -1,0 +1,92 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://bullet/bullet.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player/player.gd"
+}, {
+"base": "Node",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://skills/skills.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"Player": "",
+"Skill": ""
+}
+
+[application]
+
+config/name="topdown Server"
+run/main_scene="res://menu/menu.tscn"
+
+[autoload]
+
+global="*res://global.gd"
+
+[display]
+
+window/size/width=800
+window/size/height=800
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+stretch/aspect="keep_height"
+stretch/mode="2d"
+
+[gdnative]
+
+singletons=[  ]
+
+[image_loader]
+
+repeat=false
+
+[input]
+
+zoom_in={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+zoom_out={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Stage"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Bullet"
+
+[physics]
+
+2d/default_gravity=700
+
+[rasterizer]
+
+use_pixel_snap=true
+
+[render]
+
+mipmap_policy=1
+
+[texture_import]
+
+filter=false
